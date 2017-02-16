@@ -1,18 +1,12 @@
 package pl.sda.dao;
 
 import org.jooq.DSLContext;
-import org.jooq.Record;
-import org.jooq.Result;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import pl.sda.domain.Department;
 import pl.sda.jooq.Tables;
-import pl.sda.jooq.tables.Dept;
 import pl.sda.jooq.tables.records.DeptRecord;
-
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,10 +14,6 @@ import java.util.List;
  * Created by pzawa on 02.02.2017.
  */
 public class DeptDAOJooqImpl implements DeptDAO{
-    private static String QUERY_BY_ID  = "SELECT deptno, dname, location FROM Dept WHERE deptno = ?";
-    private static String INSERT_STMT = "INSERT INTO Dept(deptno, dname, location) VALUES(?,?,?)";
-    private static String UPDATE_STMT= "UPDATE Dept set dname = ?, location = ?  WHERE deptno = ?";
-    private static String DELETE_STMT= "DELETE FROM Dept WHERE deptno = ?";
 
     private final JdbcConnectionManager jdbcConnectionManager;
 
